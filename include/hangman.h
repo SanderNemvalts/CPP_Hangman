@@ -34,6 +34,8 @@ public:
 
     bool kaotus();
 
+    size_t sonaPikkus();
+
     std::map<size_t, char> mangiRound(char arvamus);
 };
 

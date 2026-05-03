@@ -50,6 +50,10 @@ bool hangman::kaotus() {
     return vale_arvamusi >= 5;
 }
 
+size_t hangman::sonaPikkus() {
+    return vastuse_pikkus;
+}
+
 void hangman::esitapilt() {
     if (vale_arvamusi == 0) {
         std::cout << "     ------|\n           |\n           |\n           |\n           |\n           |\n           |\n___________|";
@@ -80,9 +84,9 @@ std::map<size_t, char> hangman::mangiRound(char arvamus) {
     }
 
     if (this -> kontrolli(arvamus)) {
-        std::cout << arvamus << " on sõnas olemas!\n";
+        std::cout << "\t\"" << arvamus << "\" on sõnas olemas!\n";
     } else {
-        std::cout << arvamus << " ei ole sõnas!\n";
+        std::cout << "\t\"" << arvamus << "\" ei ole sõnas!\n";
         ++vale_arvamusi;
         this->esitapilt();
         std::cout << "\n";
